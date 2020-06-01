@@ -1,8 +1,8 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
 function App() {
-  return <div className="App">Math Magiciens is working</div>;
+  return <h1 className="App">Math Magiciens is working</h1>;
 }
 
 export default App;
