@@ -1,7 +1,15 @@
 import React from 'react';
+import ButtonPanel from './ButtonPanel';
+import Display from './Display';
+
 
 function App() {
-  return <h1 className="App">Math Magiciens is working</h1>;
+  return (
+    <div className="App">
+      <Display />
+      <ButtonPanel />
+    </div>
+  );
 }
 
 export default App;

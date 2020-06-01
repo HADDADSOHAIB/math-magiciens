@@ -1,5 +1,7 @@
 import React from 'react';
 
 export default class Display extends React.Component {
-  render(){}
+  render(){
+    return <div id="display">I am Display</div>;
+  }
 }
