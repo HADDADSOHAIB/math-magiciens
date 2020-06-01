@@ -5,7 +5,6 @@ const Display = props => {
   const { result } = props;
   return (
     <div id="display">
-      The result is:
       { result }
     </div>
   );
