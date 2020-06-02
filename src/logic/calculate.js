@@ -59,7 +59,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
 
   if (buttonName === '=' && !next && total && operation === '%') {
     return {
-      total: (operate(parseFloat(total), null, operation)).toString(),
+      total: (operate(parseFloat(total), 100, '/')).toString(),
       next: null,
       operation: null,
     };
