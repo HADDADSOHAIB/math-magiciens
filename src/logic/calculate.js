@@ -4,7 +4,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
   if (buttonName.match(/[0-9]/)) {
     return {
       total,
-      next: `${next}${buttonName}`,
+      next: next ? `${next}${buttonName}` : `${buttonName}`,
       operation,
     };
   }
