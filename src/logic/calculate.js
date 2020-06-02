@@ -4,32 +4,8 @@ const calculate = ({ total, next, operation }, buttonName) => {
   if (buttonName.match(/[0-9]/)) {
     return {
       total,
-      next: `${next}${buttonName}`,
+      next: next ? `${next}${buttonName}` : `${buttonName}`,
       operation,
-    };
-  }
-
-  if (buttonName.match(/[-/X+%]/) && next) {
-    return {
-      total: next,
-      next: '',
-      operation: buttonName,
-    };
-  }
-
-  if (buttonName === '.' && !next.includes('.')) {
-    return {
-      total,
-      next: `${next}.`,
-      operation,
-    };
-  }
-
-  if (buttonName === 'AC') {
-    return {
-      total: null,
-      next: null,
-      operation: null,
     };
   }
 
@@ -49,17 +25,65 @@ const calculate = ({ total, next, operation }, buttonName) => {
     };
   }
 
-  if (buttonName === '=' && next && total) {
+  if (buttonName.match(/[-/X+]/) && next && total) {
     return {
-      total: (operate(parseFloat(next), parseFloat(total), operation)).toString(),
+      total: (operate(parseFloat(total), parseFloat(next), buttonName)).toString(),
+      next: null,
+      operation: buttonName,
+    };
+  }
+
+  if (buttonName.match(/[-/X+]/) && !next && total) {
+    return {
+      total,
+      next,
+      operation: buttonName,
+    };
+  }
+
+  if (buttonName.match(/[-/X+]/) && next && !total) {
+    return {
+      total: next,
+      next: null,
+      operation: buttonName,
+    };
+  }
+
+  if (buttonName === '.' && next && !next.includes('.')) {
+    return {
+      total,
+      next: `${next}.`,
+      operation,
+    };
+  }
+
+  if (buttonName === 'AC') {
+    return {
+      total: null,
       next: null,
       operation: null,
     };
   }
 
-  if (buttonName === '=' && !next && total && operation === '%') {
+  if (buttonName === '=' && next && total) {
     return {
-      total: (operate(parseFloat(total), 100, '/')).toString(),
+      total: (operate(parseFloat(total), parseFloat(next), operation)).toString(),
+      next: null,
+      operation: null,
+    };
+  }
+
+  if (buttonName === '%' && next && total) {
+    return {
+      total,
+      next: (operate(parseFloat(next), 100, '/')).toString(),
+      operation,
+    };
+  }
+
+  if (buttonName === '%' && next && !total) {
+    return {
+      total: (operate(parseFloat(next), 100, '/')).toString(),
       next: null,
       operation: null,
     };
