@@ -18,7 +18,7 @@ const operate = (one, two, op) => {
   }
 
   if (op === '/' && two !== 0) {
-    return oneBig.div(twoBig);
+    return oneBig.div(twoBig).toFixed(2);
   }
 
   if (op === '/' && two === 0) {
