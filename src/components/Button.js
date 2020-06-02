@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = props => {
-  const { name, bgColor, wide } = props;
+  const { name, bgColor, wide, clickHandle } = props;
   const style = {
     backgroundColor: bgColor,
     width: (wide ? '50%' : '25%'),

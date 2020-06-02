@@ -8,33 +8,33 @@ const ButtonPanel = props => {
   return (
     <div id="button-panel">
       <div className="group">
-        <Button name="AC" bgColor="#eee" onClick={handleClick} />
-        <Button name="+/-" bgColor="#eee" onClick={handleClick} />
-        <Button name="%" bgColor="#eee" onClick={handleClick} />
-        <Button name="/" onClick={handleClick} />
+        <Button name="AC" bgColor="#eee" clickHandle={handleClick} />
+        <Button name="+/-" bgColor="#eee" onCclickHandlelick={handleClick} />
+        <Button name="%" bgColor="#eee" clickHandle={handleClick} />
+        <Button name="/" clickHandle={handleClick} />
       </div>
       <div className="group">
-        <Button name="7" bgColor="#eee" onClick={handleClick} />
-        <Button name="8" bgColor="#eee" onClick={handleClick} />
-        <Button name="9" bgColor="#eee" onClick={handleClick} />
+        <Button name="7" bgColor="#eee" clickHandle={handleClick} />
+        <Button name="8" bgColor="#eee" clickHandle={handleClick} />
+        <Button name="9" bgColor="#eee" clickHandle={handleClick} />
         <Button name="X" />
       </div>
       <div className="group">
-        <Button name="4" bgColor="#eee" onClick={handleClick} />
-        <Button name="5" bgColor="#eee" onClick={handleClick} />
-        <Button name="6" bgColor="#eee" onClick={handleClick} />
+        <Button name="4" bgColor="#eee" clickHandle={handleClick} />
+        <Button name="5" bgColor="#eee" clickHandle={handleClick} />
+        <Button name="6" bgColor="#eee" clickHandle={handleClick} />
         <Button name="-" />
       </div>
       <div className="group">
-        <Button name="1" bgColor="#eee" onClick={handleClick} />
-        <Button name="2" bgColor="#eee" onClick={handleClick} />
-        <Button name="3" bgColor="#eee" onClick={handleClick} />
-        <Button name="+" onClick={handleClick} />
+        <Button name="1" bgColor="#eee" clickHandle={handleClick} />
+        <Button name="2" bgColor="#eee" clickHandle={handleClick} />
+        <Button name="3" bgColor="#eee" clickHandle={handleClick} />
+        <Button name="+" clickHandle={handleClick} />
       </div>
       <div className="group button-zero">
-        <Button name="0" bgColor="#eee" wide onClick={handleClick} />
-        <Button name="." bgColor="#eee" onClick={handleClick} />
-        <Button name="=" onClick={handleClick} />
+        <Button name="0" bgColor="#eee" wide clickHandle={handleClick} />
+        <Button name="." bgColor="#eee" clickHandle={handleClick} />
+        <Button name="=" clickHandle={handleClick} />
       </div>
     </div>
   );
