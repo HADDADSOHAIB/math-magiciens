@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import Big from 'big.js';
 
 const operate = (one, two, op) => {
