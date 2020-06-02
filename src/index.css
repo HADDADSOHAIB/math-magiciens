@@ -29,13 +29,8 @@ code {
 
 .group button {
   height: 100px;
-  width: 25%;
   font-size: xx-large;
   border: rgb(199, 199, 199) solid 1px;
-}
-
-#button-0 {
-  width: 50%;
 }
 
 #display {
