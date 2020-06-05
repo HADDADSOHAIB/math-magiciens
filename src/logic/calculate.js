@@ -20,14 +20,14 @@ const calculate = ({ total, next, operation }, buttonName) => {
   if (buttonName === '+/-' && next) {
     return {
       total,
-      next: -1 * parseFloat(next),
+      next: (-1 * parseFloat(next)).toString(),
       operation,
     };
   }
 
   if (buttonName === '+/-' && !next && total) {
     return {
-      total: -1 * parseFloat(total),
+      total: (-1 * parseFloat(total)).toString(),
       next,
       operation,
     };
