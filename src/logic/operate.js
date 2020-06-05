@@ -6,26 +6,26 @@ const operate = (one, two, op) => {
   const twoBig = new Big(two);
 
   if (op === '+') {
-    return oneBig.plus(twoBig);
+    return oneBig.plus(twoBig).toString();
   }
 
   if (op === '-') {
-    return oneBig.minus(twoBig);
+    return oneBig.minus(twoBig).toString();
   }
 
   if (op === 'X') {
-    return oneBig.mul(twoBig);
+    return oneBig.mul(twoBig).toString();
   }
 
   if (op === '/' && two !== 0) {
-    return oneBig.div(twoBig).toFixed(2);
+    return oneBig.div(twoBig).toFixed(2).toString();
   }
 
   if (op === '/' && two === 0) {
-    return Infinity;
+    return Infinity.toString();
   }
 
-  return 0;
+  return '0';
 };
 
 export default operate;

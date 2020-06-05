@@ -20,14 +20,14 @@ const calculate = ({ total, next, operation }, buttonName) => {
   if (buttonName === '+/-' && next) {
     return {
       total,
-      next: (-1 * parseFloat(next)).toString(),
+      next: -1 * parseFloat(next),
       operation,
     };
   }
 
   if (buttonName === '+/-' && !next && total) {
     return {
-      total: (-1 * parseFloat(total)).toString(),
+      total: -1 * parseFloat(total),
       next,
       operation,
     };
@@ -35,7 +35,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
 
   if (buttonName.match(/[-/X+]/) && next && total) {
     return {
-      total: (operate(parseFloat(total), parseFloat(next), buttonName)).toString(),
+      total: operate(parseFloat(total), parseFloat(next), buttonName),
       next: null,
       operation: buttonName,
     };
@@ -91,7 +91,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
 
   if (buttonName === '=' && next && total) {
     return {
-      total: (operate(parseFloat(total), parseFloat(next), operation)).toString(),
+      total: operate(parseFloat(total), parseFloat(next), operation),
       next: null,
       operation: null,
     };
@@ -100,14 +100,14 @@ const calculate = ({ total, next, operation }, buttonName) => {
   if (buttonName === '%' && next && total) {
     return {
       total,
-      next: (operate(parseFloat(next), 100, '/')).toString(),
+      next: operate(parseFloat(next), 100, '/'),
       operation,
     };
   }
 
   if (buttonName === '%' && next && !total) {
     return {
-      total: (operate(parseFloat(next), 100, '/')).toString(),
+      total: operate(parseFloat(next), 100, '/'),
       next: null,
       operation: null,
     };
