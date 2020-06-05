@@ -1,6 +1,14 @@
 import operate from './operate';
 
 const calculate = ({ total, next, operation }, buttonName) => {
+  if (buttonName.match(/[0-9]/) && total && total.includes('.') && !operation) {
+    return {
+      total: `${total}${buttonName}`,
+      next,
+      operation,
+    };
+  }
+
   if (buttonName.match(/[0-9]/)) {
     return {
       total,
@@ -53,6 +61,22 @@ const calculate = ({ total, next, operation }, buttonName) => {
     return {
       total,
       next: `${next}.`,
+      operation,
+    };
+  }
+
+  if (buttonName === '.' && !next && operation) {
+    return {
+      total,
+      next: '0.',
+      operation,
+    };
+  }
+
+  if (buttonName === '.' && !next && total && !total.includes('.')) {
+    return {
+      total: `${total}.`,
+      next,
       operation,
     };
   }
