@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#app {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+#button-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  height: 100px;
+}
+
+.group button {
+  height: 100px;
+  font-size: xx-large;
+  border: rgb(199, 199, 199) solid 1px;
+}
+
+#display {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-size: 4rem;
+  background-color: #999;
+  height: 100px;
+  color: #eee;
+  font-weight: 900;
+  padding: 10px;
+}
+

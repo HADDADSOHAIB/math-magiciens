@@ -3,33 +3,33 @@ import Button from './Button';
 
 const ButtonPanel = () => (
   <div id="button-panel">
-    <div id="group-1">
-      <Button name="AC" />
-      <Button name="+/-" />
-      <Button name="%" />
+    <div className="group">
+      <Button name="AC" bgColor="#eee" />
+      <Button name="+/-" bgColor="#eee" />
+      <Button name="%" bgColor="#eee" />
       <Button name="/" />
     </div>
-    <div id="group-2">
-      <Button name="7" />
-      <Button name="8" />
-      <Button name="9" />
+    <div className="group">
+      <Button name="7" bgColor="#eee" />
+      <Button name="8" bgColor="#eee" />
+      <Button name="9" bgColor="#eee" />
       <Button name="X" />
     </div>
-    <div id="group-3">
-      <Button name="4" />
-      <Button name="5" />
-      <Button name="6" />
+    <div className="group">
+      <Button name="4" bgColor="#eee" />
+      <Button name="5" bgColor="#eee" />
+      <Button name="6" bgColor="#eee" />
       <Button name="-" />
     </div>
-    <div id="group-4">
-      <Button name="1" />
-      <Button name="2" />
-      <Button name="3" />
+    <div className="group">
+      <Button name="1" bgColor="#eee" />
+      <Button name="2" bgColor="#eee" />
+      <Button name="3" bgColor="#eee" />
       <Button name="+" />
     </div>
-    <div id="group-5">
-      <Button name="0" />
-      <Button name="." />
+    <div className="group button-zero">
+      <Button name="0" bgColor="#eee" wide />
+      <Button name="." bgColor="#eee" />
       <Button name="=" />
     </div>
   </div>
