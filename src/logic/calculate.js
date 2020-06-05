@@ -1,6 +1,14 @@
 import operate from './operate';
 
 const calculate = ({ total, next, operation }, buttonName) => {
+  if (buttonName.match(/[0-9]/) && total && total.includes('.') && !operation) {
+    return {
+      total: `${total}${buttonName}`,
+      next,
+      operation,
+    };
+  }
+
   if (buttonName.match(/[0-9]/)) {
     return {
       total,
@@ -27,7 +35,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
 
   if (buttonName.match(/[-/X+]/) && next && total) {
     return {
-      total: (operate(parseFloat(total), parseFloat(next), buttonName)).toString(),
+      total: operate(parseFloat(total), parseFloat(next), buttonName),
       next: null,
       operation: buttonName,
     };
@@ -57,6 +65,22 @@ const calculate = ({ total, next, operation }, buttonName) => {
     };
   }
 
+  if (buttonName === '.' && !next && operation) {
+    return {
+      total,
+      next: '0.',
+      operation,
+    };
+  }
+
+  if (buttonName === '.' && !next && total && !total.includes('.')) {
+    return {
+      total: `${total}.`,
+      next,
+      operation,
+    };
+  }
+
   if (buttonName === 'AC') {
     return {
       total: null,
@@ -67,7 +91,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
 
   if (buttonName === '=' && next && total) {
     return {
-      total: (operate(parseFloat(total), parseFloat(next), operation)).toString(),
+      total: operate(parseFloat(total), parseFloat(next), operation),
       next: null,
       operation: null,
     };
@@ -76,14 +100,14 @@ const calculate = ({ total, next, operation }, buttonName) => {
   if (buttonName === '%' && next && total) {
     return {
       total,
-      next: (operate(parseFloat(next), 100, '/')).toString(),
+      next: operate(parseFloat(next), 100, '/'),
       operation,
     };
   }
 
   if (buttonName === '%' && next && !total) {
     return {
-      total: (operate(parseFloat(next), 100, '/')).toString(),
+      total: operate(parseFloat(next), 100, '/'),
       next: null,
       operation: null,
     };
